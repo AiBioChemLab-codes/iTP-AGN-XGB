@@ -1,0 +1,58 @@
+{
+  "protocol": "train_only_selection_v1",
+  "tasks": [
+    "AAP",
+    "ABP",
+    "ACP",
+    "AIP",
+    "AVP",
+    "CPP",
+    "PBP",
+    "QSP"
+  ],
+  "folds": 10,
+  "seed": 42,
+  "threshold": 0.5,
+  "agn": {
+    "sigma": 0.01,
+    "copies": 10,
+    "keep_original": false
+  },
+  "n_jobs": 4,
+  "models": [
+    "XGBoost"
+  ],
+  "voting_sizes": [
+    3,
+    5,
+    7
+  ],
+  "search": {
+    "XGBoost": {
+      "n_estimators": [
+        200,
+        500
+      ],
+      "max_depth": [
+        3,
+        6
+      ],
+      "learning_rate": [
+        0.03,
+        0.1
+      ],
+      "subsample": [
+        0.8
+      ],
+      "colsample_bytree": [
+        0.8
+      ],
+      "reg_alpha": [
+        0.1
+      ],
+      "reg_lambda": [
+        1.0
+      ]
+    }
+  }
+}
